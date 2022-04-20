@@ -3,7 +3,7 @@ var ghpages = require('gh-pages');
 ghpages.publish(
     'public', // path to public directory
     {
-        branch: 'gh-pages',
+        branch: 'main',
         repo: 'https://github.com/ldmichae/minesvelter.git', // Update to point to your repository  
         user: {
             name: 'Logan Michaels', // update to use your name
