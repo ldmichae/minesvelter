@@ -1,0 +1,1 @@
+.minefield.svelte-1kscmyu{display:grid;grid-template-columns:repeat(var(--edges), var(--colWidth));grid-template-rows:repeat(var(--edges), var(--colWidth))}.patch.svelte-1kscmyu{border:1px;border-color:black;border-style:solid}
