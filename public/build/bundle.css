@@ -1,1 +1,1 @@
-.minefield.svelte-1kscmyu{display:grid;grid-template-columns:repeat(var(--edges), var(--colWidth));grid-template-rows:repeat(var(--edges), var(--colWidth))}.patch.svelte-1kscmyu{border:1px;border-color:black;border-style:solid}
+.minefield.svelte-hbdk9k{display:grid;grid-template-columns:repeat(var(--edges), var(--colWidth));grid-template-rows:repeat(var(--edges), var(--colWidth))}.square.svelte-1sy2o87{height:100%;width:100% ;border:1px;border-color:black;border-style:solid;cursor:pointer;display:grid;align-items:center;justify-self:center;text-align:center}
