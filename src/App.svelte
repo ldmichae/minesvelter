@@ -1,22 +1,29 @@
 <script>
 	import Square from './Square.svelte'
+	import Stopwatch from './Stopwatch.svelte';
+
 	export let edgeLen
-	export let inputDisabled = false
+	export let gameStarted = false
 	export const activeText = "Start Game!"
 	export const inactiveText = "Change Board"
 	$: columnSize = `${screen.width * 0.33 / edgeLen}px`
 	
-	
 </script>
 
 <main>
-	<h1>Hello!</h1>
-	<input type = "number" min = "3" max = "10" bind:value={edgeLen} disabled={inputDisabled} />
-	<button on:click={() => {inputDisabled = !inputDisabled}}>
-		{#if inputDisabled}
+	<h1>Minesvelter</h1>
+	<h3>Set board size to generate game</h3>
+	{#key gameStarted}
+		{#if gameStarted}
+			<Stopwatch/>
+		{/if}
+	{/key}
+	<input type = "number" min = "3" max = "10" bind:value={edgeLen} disabled={gameStarted} />
+	<button on:click={() => {gameStarted = !gameStarted}}>
+		{#if gameStarted}
 			Change Board
 		{/if}
-		{#if !inputDisabled}
+		{#if !gameStarted}
 			Start Game!
 		{/if}
 	</button>
@@ -24,10 +31,10 @@
 		{#key edgeLen}
 			{#each {length: edgeLen ** 2} as _, i}
 				{#if i === 5}
-					<Square class = "square" hasBomb={true} />
+					<Square class = "square" hasBomb={true} inPlay={gameStarted}/>
 				{/if}
 				{#if i !== 5}
-					<Square class = "square" hasBomb={false} />
+					<Square class = "square" hasBomb={false} inPlay={gameStarted}/>
 				{/if}
 			{/each}
 		{/key}

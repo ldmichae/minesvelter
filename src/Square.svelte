@@ -1,17 +1,16 @@
 <script>
-    import { tick} from 'svelte';
     export let hasBomb
     export let searched = false
-
+    export let inPlay = false
 </script>
 
 
 <main>
-    <div class = "square" on:click={() => { searched = true}}>
-        {#if searched === true && hasBomb === true }
+    <div class = "square" on:click={() => {if(inPlay){searched = true}}}>
+        {#if searched === true && hasBomb === true  && inPlay === true}
             X
         {/if}
-        {#if searched === true && hasBomb === false}
+        {#if searched === true && hasBomb === false && inPlay === true}
             O
         {/if}
     </div>
